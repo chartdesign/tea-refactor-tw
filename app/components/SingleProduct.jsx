@@ -8,7 +8,7 @@ const SingleProduct = ({ product }) => {
   } = CartState();
 
   return (
-    <div className='border border-cozy-purple p-4 mx-1 max-w-[220px] flex flex-col justify-between gap-2'>
+    <div className='border border-cozy-purple p-4 mx-1 max-w-[220px] flex flex-col justify-between gap-2 rounded-lg'>
       <div>
         <img
           className='w-full max-h-[100px] rounded-lg object-cover mx-auto'

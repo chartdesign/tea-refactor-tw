@@ -21,24 +21,23 @@ const Cart = () => {
 
   return (
     <div className='shopping-cart'>
-      <div className='cart-items'>
-        <h2>Shoppin Cart</h2>
+      <h2 className='text-lg m-4'>Shoppin Cart</h2>
+      <div className='lg:flex max-w-[1080px] m-auto'>
         <ul>
           {cart.map((prod) => (
-            <li key={prod.id}>
+            <li key={prod.id} className='grid grid-cols-4 m-4'>
               <div>
-                <img src={prod.image} alt={prod.name} />
-              </div>
-              <div>
-                <span>{prod.name}</span>
-              </div>
-              <div>$ {prod.price}</div>
-              <div>
-                <Rating
-                  style={{ display: "inline-block" }}
-                  rating={prod.ratings}
+                <img
+                  src={prod.image}
+                  alt={prod.name}
+                  className='w-[100px] h-[100px] object-cover rounded-2xl'
                 />
               </div>
+              <div>
+                <span className='text-sm font-light'>{prod.name}</span>
+              </div>
+
+              {/* add or remove from cart */}
               <div>
                 <select
                   id='select'
@@ -57,9 +56,7 @@ const Cart = () => {
                     <option key={x + 1}>{x + 1}</option>
                   ))}
                 </select>
-              </div>
-              <div>
-                <button
+                <div
                   onClick={() =>
                     dispatch({
                       type: "REMOVE_FROM_CART",
@@ -67,21 +64,36 @@ const Cart = () => {
                     })
                   }
                 >
-                  <AiFillDelete fontSize='20px' />
-                </button>
+                  <span className='text-blue-300 text-sm'>Remove </span>
+                </div>
               </div>
+              <div>$ {prod.price}</div>
             </li>
           ))}
         </ul>
-      </div>
-      <div className='order-summary'>
-        <span className='title'>Subtotal ({cart.length}) items</span>
-        <span style={{ fontWeight: 700, fontSize: 20 }}>Total: $ {total}</span>
-        <button disabled={cart.length === 0}>Proceed to Checkout</button>
-        <Link href='/shop'>
-          {" "}
-          <p>or Continue Shopping</p>
-        </Link>
+        {/* order summary */}
+        <div className='bg-zinc-50 p-4 m-4 leading-10 rounded-2xl'>
+          <div className='flex justify-between'>
+            <span className='title'>Subtotal ({cart.length}) items</span>
+            <span style={{ fontWeight: 400, fontSize: 20 }}>
+              Total: $ {Number(total).toFixed(2)}
+            </span>
+          </div>
+          <div className='mx-auto'>
+            <button
+              disabled={cart.length === 0}
+              className='bg-blue-600 p-1 text-white rounded-xl w-full'
+            >
+              Proceed to Checkout
+            </button>
+            <Link href='/shop'>
+              {" "}
+              <p className='text-blue-400 cursor-pointer'>
+                or Continue Shopping
+              </p>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

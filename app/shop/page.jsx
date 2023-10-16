@@ -5,6 +5,8 @@ import Header from "../components/Header";
 import FilterForm from "../components/FilterForm";
 import SingleProduct from "../components/SingleProduct";
 import { FcPrevious, FcNext } from "react-icons/fc";
+import Footer from "../components/Footer";
+import Hero from "../components/Hero";
 
 const Shop = () => {
   const {
@@ -65,6 +67,7 @@ const Shop = () => {
   return (
     <>
       <Header />
+      <Hero />
       <div className='flex'>
         <FilterForm />
         <div className='container flex flex-col mt-8'>
@@ -99,6 +102,7 @@ const Shop = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

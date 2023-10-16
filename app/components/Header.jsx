@@ -141,7 +141,7 @@ const Header = () => {
 
             {/* cart-dropdown-menu */}
             {isCartOpen && (
-              <div className='absolute bg-cozy-light-tan p-4 rounded-2xl'>
+              <div className='absolute bg-cozy-light-tan p-4 rounded-2xl z-40'>
                 <div
                   className='flex justify-end my-4 cursor-pointer'
                   onClick={toggleCart}
@@ -156,7 +156,7 @@ const Header = () => {
                   <>
                     {cart.map((prod) => (
                       <div
-                        className='flex gap-4 my-8 border-t border-cozy-purple p-4 justify-between'
+                        className='grid grid-cols-3 my-8 border-t border-cozy-purple p-4 justify-between'
                         key={prod.id}
                       >
                         <img
