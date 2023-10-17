@@ -10,7 +10,7 @@ const FilterForm = () => {
   } = CartState();
 
   return (
-    <div className='m-8 border-y border-cozy-purple leading-8 min-w-[200px]'>
+    <div className='m-8 border-y border-cozy-purple leading-8 lg:min-w-[200px]'>
       <h2 className='text-2xl text-cozy-purple mt-2'>Sort By</h2>
       <div>
         <label>
@@ -26,7 +26,7 @@ const FilterForm = () => {
               })
             }
           />
-          <span className='ml-2'>Ascending</span>
+          <span className='ml-2 text-sm'>Ascending</span>
         </label>
       </div>
       <div>
@@ -43,7 +43,7 @@ const FilterForm = () => {
               })
             }
           />
-          <span className='ml-2'>Descending</span>
+          <span className='ml-2 text-sm'>Descending</span>
         </label>
       </div>
       <div>
@@ -58,7 +58,7 @@ const FilterForm = () => {
               })
             }
           />
-          <span className='ml-2'>Include out of stock</span>
+          <span className='ml-2 text-sm'>Include out of stock</span>
         </label>
       </div>
       <div>
@@ -72,11 +72,11 @@ const FilterForm = () => {
           }
           style={{ cursor: "pointer", display: "inline-block" }}
         />
-        <span className='ml-2'>By Ratings</span>
+        <span className='ml-2 text-sm'>By Ratings</span>
       </div>
 
       <button
-        className='bg-cozy-light-tan p-2 w-full my-2'
+        className='bg-cozy-light-tan p-2 w-full my-2 text-sm'
         onClick={() =>
           productDispatch({
             type: "CLEAR_FILTERS",

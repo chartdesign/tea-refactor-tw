@@ -23,7 +23,7 @@ const Cart = () => {
     <div className='shopping-cart'>
       <h2 className='text-lg m-4'>Shoppin Cart</h2>
       <div className='lg:flex max-w-[1080px] m-auto'>
-        <ul>
+        <ul className='lg:w-3/5'>
           {cart.map((prod) => (
             <li key={prod.id} className='grid grid-cols-4 m-4'>
               <div>
@@ -64,7 +64,9 @@ const Cart = () => {
                     })
                   }
                 >
-                  <span className='text-blue-300 text-sm'>Remove </span>
+                  <span className='text-blue-300 text-sm cursor-pointer'>
+                    Remove{" "}
+                  </span>
                 </div>
               </div>
               <div>$ {prod.price}</div>
@@ -72,7 +74,7 @@ const Cart = () => {
           ))}
         </ul>
         {/* order summary */}
-        <div className='bg-zinc-50 p-4 m-4 leading-10 rounded-2xl'>
+        <div className='bg-zinc-50 p-4 m-4 leading-10 rounded-2xl lg:w-2/5'>
           <div className='flex justify-between'>
             <span className='title'>Subtotal ({cart.length}) items</span>
             <span style={{ fontWeight: 400, fontSize: 20 }}>

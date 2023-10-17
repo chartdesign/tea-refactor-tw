@@ -14,6 +14,7 @@ import {
 
 import Link from "next/link";
 import { CartState } from "../context/Context";
+import Image from "next/image";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -36,9 +37,9 @@ const Header = () => {
   return (
     <nav className='bg-white p-4 border-b border-gray-300'>
       <div className='container mx-auto flex items-center justify-between '>
-        <div className='text-bg-gray-700 text-2xl font-bold w-1/4'>
+        <div className=' text-xl font-bold w-1/4'>
           <Link href='/'>
-            <span>Your Logo</span>{" "}
+            <span className='text-cozy-purple'>Cozy Tea Shop</span>
           </Link>
         </div>
 
@@ -66,24 +67,24 @@ const Header = () => {
               </div>
             </div>
             <div className='flex flex-col items-center  h-full space-y-4 mt-8'>
-              <a
+              <Link
+                href='/shop'
+                className='text-bg-gray-700 text-xl hover:text-gray-400 mt-4'
+              >
+                Shop
+              </Link>
+              <Link
+                href='/cart'
+                className='text-bg-gray-700 text-xl hover:text-gray-400 mt-4'
+              >
+                Cart
+              </Link>
+              <Link
                 href='#'
                 className='text-bg-gray-700 text-xl hover:text-gray-400 mt-4'
               >
-                Link 1
-              </a>
-              <a
-                href='#'
-                className='text-bg-gray-700 text-xl hover:text-gray-400 mt-4'
-              >
-                Link 2
-              </a>
-              <a
-                href='#'
-                className='text-bg-gray-700 text-xl hover:text-gray-400 mt-4'
-              >
-                Link 3
-              </a>
+                Account
+              </Link>
               <div className='flex items-center space-x-4 '>
                 <input
                   type='text'

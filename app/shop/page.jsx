@@ -15,7 +15,7 @@ const Shop = () => {
   } = CartState();
 
   // const itemsPerPage = 5; // Number of items to display per page
-  const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [itemsPerPage, setItemsPerPage] = useState(4);
   const [currentPage, setCurrentPage] = useState(1);
 
   const transformProducts = () => {
@@ -68,21 +68,21 @@ const Shop = () => {
     <>
       <Header />
       <Hero />
-      <div className='flex'>
+      <div className='md:flex'>
         <FilterForm />
         <div className='container flex flex-col mt-8'>
-          <div className='grid gap-1 grid-cols-3 max-w-3xl'>
+          <div className='grid grid-cols-2 md:grid-cols-4 m-auto'>
             {paginatedProducts.map((prod) => (
               <SingleProduct product={prod} key={prod.id} />
             ))}
           </div>
 
-          <div className='flex mt-8 gap-4'>
+          <div className='flex mt-8 gap-4 m-auto'>
             <label>
               Items per Page:
               <select value={itemsPerPage} onChange={handleItemsPerPageChange}>
-                <option value={3}>3</option>
-                <option value={6}>6</option>
+                <option value={4}>4</option>
+                <option value={8}>8</option>
               </select>
             </label>
             <button
